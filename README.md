@@ -1,3 +1,49 @@
+# fauxmoESP
+
+[Kurze Änderungsübersicht](AENDERUNGEN_README_2026-10-21.md)
+
+## 🚀 fauxmoESP – lokale Alexa-Geräteemulation
+
+![Plattform](https://img.shields.io/badge/Plattform-ESP8266%20/%20ESP32-blue) ![Schnittstelle](https://img.shields.io/badge/Schnittstelle-SSDP%20/%20HTTP-orange)
+
+Arduino-Bibliothek zur Emulation von Hue-/Belkin-Geräten auf ESP8266/ESP32. Dieses Repository enthält Bibliotheksquellcode und Beispiele, keinen fest verdrahteten SSR1-Schaltaktor.
+
+**Dokumentationsstand:** 21.10.2026 · Branch `master`. Beschreibt den vorhandenen Projektstand; kein neuer Funktionstest am Gerät.
+
+[Quellcode herunterladen](https://github.com/TimiWho/fauxmoESP/archive/refs/heads/master.zip) · [Ursprüngliche Haupt-README](README_Backup_2026-10-21.md)
+
+---
+
+## ⚙️ Bibliothek und Beispiele
+
+`src/fauxmoESP.h` / `.cpp` definieren Geräteverwaltung und Netzwerkprotokoll. `addDevice()` legt virtuelle Geräte an, `onSetState()` liefert Geräte-ID, Namen, Zustand und Helligkeitswert an die Anwendung. `handle()` gehört in den Loop.
+
+`examples/fauxmoESP_Basic/` demonstriert den internen HTTP-Server; `examples/fauxmoESP_External_Server/` die Einbindung in einen externen Async-Webserver. `credentials.sample.h` dient jeweils als Vorlage. GPIOs und Aktionslogik bestimmt das Beispiel bzw. die einbindende Firmware; ein MQTT-`HELP/WDOG`-Protokoll gehört nicht zur Bibliothek selbst.
+
+Bibliotheksversion und Abhängigkeiten stehen in `library.properties` bzw. den Beispiel-`platformio.ini`. Die ursprünglichen Installationshinweise, Troubleshooting-Abschnitte, Autoren und Lizenzangaben bleiben unten erhalten.
+
+## 📂 Projektstruktur
+
+| Pfad | Inhalt |
+| --- | --- |
+| [examples/](examples/) | Eigenständiger Projektteil; Inhalt im verlinkten Ordner. |
+| [src/](src/) | Eigenständiger Projektteil; Inhalt im verlinkten Ordner. |
+
+## 🐞 GitHub-Issues
+
+**Abgleich:** 21.10.2026. Status aus GitHub; diese Übersicht ändert keine Issues.
+
+Zum Abgleichzeitpunkt sind keine offenen GitHub-Issues vorhanden.
+
+In diesem Repository sind zum Abgleichzeitpunkt keine GitHub-Issues vorhanden.
+
+## 🗂️ Originaldokumentation, Quellen und Lizenz
+
+Die ursprünglichen technischen Erläuterungen, Quellenangaben und Autorenhinweise bleiben nachfolgend erhalten. Maßgeblich für konkrete Pin- und Timerwerte ist der oben beschriebene Repository-Stand.
+
+<details>
+<summary>Originaldokumentation, Quellen und Lizenz anzeigen</summary>
+
 # FauxmoESP
 
 Amazon Alexa support for ESP8266, ESP32 and Raspberry Pi Pico W devices.
@@ -169,3 +215,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+</details>
+
